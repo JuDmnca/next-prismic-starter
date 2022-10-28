@@ -1,0 +1,25 @@
+:root {
+  // Fonts
+  --f-fontname: "FontName";
+
+  // Colors
+  --c-white: #fff;
+  --c-black: #222;
+
+  // Layout
+  --l-gap: 60px;
+  --l-mgap: 30px;
+  --l-sgap: 20px;
+
+  // z-index
+  --z-nav: 100;
+  --z-notification: 110;
+  --z-popin: 120;
+
+  // General
+  --button-height: 50px;
+  --nav-height: 60px;
+
+  --border-black: solid 1px var(--c-black);
+  --border-white: solid 1px var(--c-white);
+}

@@ -1,0 +1,127 @@
+.db {
+  display: block;
+}
+
+.dib {
+  display: inline-block;
+}
+
+.rel {
+  position: relative;
+}
+
+.abs {
+  position: absolute;
+}
+
+.fix {
+  position: fixed;
+}
+
+.top {
+  top: 0;
+}
+
+.left {
+  left: 0;
+}
+
+.bottom {
+  bottom: 0;
+}
+
+.right {
+  right: 0;
+}
+
+.f {
+  display: flex;
+}
+
+.fw {
+  flex-wrap: wrap;
+}
+
+.fc {
+  flex-direction: column;
+}
+
+.x {
+  width: 100%;
+}
+
+.y {
+  height: 100%;
+}
+
+.z2 {
+  z-index: 2;
+}
+
+.ais {
+  align-items: flex-start;
+}
+
+.aic {
+  align-items: center;
+}
+
+.aie {
+  align-items: flex-end;
+}
+
+.jcb {
+  justify-content: space-between;
+}
+
+.jcc {
+  justify-content: center;
+}
+
+.jce {
+  justify-content: flex-end;
+}
+
+.y {
+  height: 100%;
+}
+
+.tc {
+  text-align: center;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.bold {
+  font-weight: 600;
+}
+
+.o-cover {
+  object-fit: cover;
+}
+
+.o-contain {
+  object-fit: contain;
+}
+
+.oh {
+  overflow: hidden;
+}
+
+.os {
+  overflow: scroll;
+}
+
+.lh0 {
+  line-height: 0;
+}
+
+.ttu {
+  text-transform: uppercase;
+}
+
+.pointer {
+  cursor: pointer;
+}

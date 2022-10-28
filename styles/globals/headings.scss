@@ -1,0 +1,75 @@
+@import "mixins.scss";
+
+$mobile_width: 420px;
+$desktop_width: 1024px;
+$large_desktop_width: 1440px;
+
+a,
+button {
+  -webkit-appearance: none;
+}
+
+button {
+  color: var(--c-black);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+a,
+div,
+span {
+  margin: 0;
+  font-family: var(--f-montserrat);
+  font-weight: normal;
+}
+
+h1,
+.h1 {
+  font-family: var(--f-optima);
+  font-weight: normal;
+  @include fluid-type(0px, $mobile_width, 22px, 25px);
+  @include fluid-type($mobile_width, $desktop_width, 25px, 28px);
+  @include fluid-type($desktop_width, $large_desktop_width, 28px, 35px);
+  line-height: 30px;
+  @include desktop {
+    line-height: 35px;
+  }
+  @include largeDesktop {
+    line-height: 40px;
+  }
+}
+
+h2,
+.h2 {
+  line-height: 20px;
+  font-family: var(--f-optima);
+  @include fluid-type(0px, $large_desktop_width, 14px, 16px);
+}
+
+h3,
+.h3 {
+  line-height: 20px;
+  font-family: var(--f-optima);
+  @include fluid-type(0px, $large_desktop_width, 13px, 15px);
+}
+
+p,
+.p {
+  line-height: 25px;
+  &.semibold {
+    font-weight: 600;
+  }
+  @include fluid-type(0px, $large_desktop_width, 15px, 17px);
+}
+
+.smalltext {
+  font-size: 13px;
+  line-height: 20px;
+  &.semibold {
+    font-weight: 600;
+  }
+}

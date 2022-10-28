@@ -1,0 +1,18 @@
+.success,
+.error {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: var(--nav-height);
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.success {
+  background-color: green;
+}
+.error {
+  background-color: red;
+}

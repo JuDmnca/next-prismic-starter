@@ -1,0 +1,8 @@
+{
+  "apiEndpoint": "https://my-next-prismic-starter.prismic.io/api/v2",
+  "libraries": [
+    "@/slices"
+  ],
+  "_latest": "0.5.1",
+  "localSliceSimulatorURL": "http://localhost:3000/slice-simulator"
+}

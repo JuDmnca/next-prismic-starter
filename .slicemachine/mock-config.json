@@ -13,6 +13,19 @@
           "blocks": 1
         }
       }
+    },
+    "posts": {}
+  },
+  "slices": {
+    "ImageText": {
+      "default": {
+        "primary": {}
+      }
+    },
+    "Text": {
+      "default": {
+        "primary": {}
+      }
     }
   }
 }

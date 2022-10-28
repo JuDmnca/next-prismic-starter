@@ -1,11 +1,14 @@
 import Head from "next/head";
-import Link from "next/link";
 
 import Layout from "../../components/layout";
+import Card from "../../components/posts/card";
 
-import styles from "../../styles/post.module.scss";
+import { createClient } from "../../prismicio";
+import { PrismicRichText } from "@prismicio/react";
 
-export default function Posts() {
+import styles from "../../styles/posts/posts.module.scss";
+
+export default function Posts({ page, posts }) {
   return (
     <Layout>
       <section className={styles.container}>
@@ -14,15 +17,27 @@ export default function Posts() {
           <meta name="description" content="Read all of my posts" />
           <link rel="icon" href="/favicon.ico" />
         </Head>
-
-        <h1>Posts</h1>
-        {/* <Image
-          src="/images/july.jpg" // Route of the image file
-          height={144} // Desired size with correct aspect ratio
-          width={144} // Desired size with correct aspect ratio
-          alt="July"
-        /> */}
+        <PrismicRichText field={page.data.title} />
+        <div className={styles.grid}>
+          {posts.map((post, index) => {
+            return <Card key={index} post={post} />;
+          })}
+        </div>
       </section>
     </Layout>
   );
+}
+
+export async function getStaticProps({ previewData }) {
+  const client = createClient({ previewData });
+
+  const page = await client.getSingle("posts");
+  const posts = await client.getAllByType("post");
+
+  return {
+    props: {
+      page,
+      posts,
+    },
+  };
 }

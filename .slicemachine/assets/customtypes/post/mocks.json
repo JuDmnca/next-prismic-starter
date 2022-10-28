@@ -14,37 +14,38 @@
     "title": [
       {
         "type": "paragraph",
-        "text": "Tempor est fugiat eu duis dolore. Aute ex labore officia id dolore ullamco minim.",
+        "text": "Sint duis dolor quis id minim. Consectetur et amet fugiat velit ipsum est cillum laboris.",
         "spans": []
       }
     ],
     "description": [
       {
         "type": "paragraph",
-        "text": "Non in et minim dolore eu excepteur aliquip in nulla laborum enim velit. Ea officia officia culpa eu id anim sint id dolor. Qui anim ipsum nisi sint labore.",
+        "text": "Ullamco in adipisicing eu officia incididunt commodo proident. Aliqua duis consequat amet minim nisi. Ex magna nisi excepteur irure laborum.",
         "spans": []
       }
     ],
-    "image": {
+    "cover": {
       "dimensions": {
         "width": 900,
         "height": 500
       },
       "alt": null,
       "copyright": null,
-      "url": "https://images.unsplash.com/photo-1587614295999-6c1c13675117"
+      "url": "https://images.unsplash.com/photo-1587840171670-8b850147754e"
     },
+    "slices": [],
     "metatitle": [
       {
         "type": "paragraph",
-        "text": "Fugiat occaecat veniam magna laborum sint nostrud et esse. Incididunt veniam labore officia irure in amet reprehenderit commodo ad.",
+        "text": "Nisi cupidatat nulla ut sunt et cupidatat anim eu pariatur exercitation ullamco consequat occaecat aute ut.",
         "spans": []
       }
     ],
     "metadescription": [
       {
         "type": "paragraph",
-        "text": "Deserunt eu irure consequat non do consequat ipsum. Velit excepteur velit sit commodo ex ullamco magna non aliquip tempor velit incididunt eiusmod. Nisi tempor consequat consectetur eiusmod aliqua nostrud voluptate sit nisi incididunt exercitation nulla magna enim sunt.",
+        "text": "Voluptate ex irure dolor consequat sunt in eu. Non consectetur nulla est nisi cillum culpa cillum est voluptate elit enim. Est est commodo voluptate nulla adipisicing aliquip amet.",
         "spans": []
       }
     ]

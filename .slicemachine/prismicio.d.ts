@@ -31,16 +31,27 @@ interface PostDocumentData {
      */
     description: prismicT.RichTextField;
     /**
-     * Image field in *Post*
+     * Cover field in *Post*
      *
      * - **Field Type**: Image
      * - **Placeholder**: *None*
-     * - **API ID Path**: post.image
+     * - **API ID Path**: post.cover
      * - **Tab**: Main
      * - **Documentation**: https://prismic.io/docs/core-concepts/image
      *
      */
-    image: prismicT.ImageField<never>;
+    cover: prismicT.ImageField<never>;
+    /**
+     * Slice Zone field in *Post*
+     *
+     * - **Field Type**: Slice Zone
+     * - **Placeholder**: *None*
+     * - **API ID Path**: post.slices[]
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/slices
+     *
+     */
+    slices: prismicT.SliceZone<PostDocumentDataSlicesSlice>;
     /**
      * MetaTitle field in *Post*
      *
@@ -65,6 +76,11 @@ interface PostDocumentData {
     metadescription: prismicT.RichTextField;
 }
 /**
+ * Slice for *Post → Slice Zone*
+ *
+ */
+type PostDocumentDataSlicesSlice = ImageTextSlice | TextSlice;
+/**
  * Post document from Prismic
  *
  * - **API ID**: `post`
@@ -74,12 +90,124 @@ interface PostDocumentData {
  * @typeParam Lang - Language API ID of the document.
  */
 export type PostDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<PostDocumentData>, "post", Lang>;
-export type AllDocumentTypes = PostDocument;
+/** Content for Posts documents */
+interface PostsDocumentData {
+    /**
+     * Title field in *Posts*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: posts.title
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    title: prismicT.RichTextField;
+}
+/**
+ * Posts document from Prismic
+ *
+ * - **API ID**: `posts`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type PostsDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<PostsDocumentData>, "posts", Lang>;
+export type AllDocumentTypes = PostDocument | PostsDocument;
+/**
+ * Primary content in ImageText → Primary
+ *
+ */
+interface ImageTextSliceDefaultPrimary {
+    /**
+     * Image field in *ImageText → Primary*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: image_text.primary.image
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    image: prismicT.ImageField<never>;
+    /**
+     * Text field in *ImageText → Primary*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: image_text.primary.text
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    text: prismicT.RichTextField;
+}
+/**
+ * Default variation for ImageText Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `ImageText`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type ImageTextSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<ImageTextSliceDefaultPrimary>, never>;
+/**
+ * Slice variation for *ImageText*
+ *
+ */
+type ImageTextSliceVariation = ImageTextSliceDefault;
+/**
+ * ImageText Shared Slice
+ *
+ * - **API ID**: `image_text`
+ * - **Description**: `ImageText`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type ImageTextSlice = prismicT.SharedSlice<"image_text", ImageTextSliceVariation>;
+/**
+ * Primary content in Text → Primary
+ *
+ */
+interface TextSliceDefaultPrimary {
+    /**
+     * Text field in *Text → Primary*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: text.primary.text
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    text: prismicT.RichTextField;
+}
+/**
+ * Default variation for Text Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Text`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type TextSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<TextSliceDefaultPrimary>, never>;
+/**
+ * Slice variation for *Text*
+ *
+ */
+type TextSliceVariation = TextSliceDefault;
+/**
+ * Text Shared Slice
+ *
+ * - **API ID**: `text`
+ * - **Description**: `Text`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type TextSlice = prismicT.SharedSlice<"text", TextSliceVariation>;
 declare module "@prismicio/client" {
     interface CreateClient {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { PostDocumentData, PostDocument, AllDocumentTypes };
+        export type { PostDocumentData, PostDocumentDataSlicesSlice, PostDocument, PostsDocumentData, PostsDocument, AllDocumentTypes, ImageTextSliceDefaultPrimary, ImageTextSliceDefault, ImageTextSliceVariation, ImageTextSlice, TextSliceDefaultPrimary, TextSliceDefault, TextSliceVariation, TextSlice };
     }
 }

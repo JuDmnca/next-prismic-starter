@@ -1,5 +1,139 @@
 {
   "slices": {
-    "components": {}
+    "components": {
+      "image_text": {
+        "library": "slices",
+        "id": "image_text",
+        "name": "ImageText",
+        "description": "ImageText",
+        "model": {
+          "id": "image_text",
+          "type": "SharedSlice",
+          "name": "ImageText",
+          "description": "ImageText",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "ImageText",
+              "primary": {
+                "image": {
+                  "type": "Image",
+                  "config": {
+                    "label": "Image",
+                    "constraint": {},
+                    "thumbnails": []
+                  }
+                },
+                "text": {
+                  "type": "StructuredText",
+                  "config": {
+                    "label": "Text",
+                    "placeholder": "",
+                    "allowTargetBlank": true,
+                    "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                  }
+                }
+              },
+              "items": {},
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "version": "sktwi1xtmkfgx8626",
+            "items": [
+              {}
+            ],
+            "primary": {
+              "image": {
+                "dimensions": {
+                  "width": 900,
+                  "height": 500
+                },
+                "alt": null,
+                "copyright": null,
+                "url": "https://images.unsplash.com/photo-1547082299-de196ea013d6"
+              },
+              "text": [
+                {
+                  "type": "paragraph",
+                  "text": "Minim aliquip cillum ut dolore nisi ex dolor commodo aliqua aliquip. Est reprehenderit laboris excepteur et. Velit nulla velit veniam.",
+                  "spans": []
+                }
+              ]
+            },
+            "slice_type": "image_text"
+          }
+        },
+        "meta": {
+          "fileName": "index",
+          "extension": "js"
+        },
+        "screenshotPaths": {}
+      },
+      "text": {
+        "library": "slices",
+        "id": "text",
+        "name": "Text",
+        "description": "Text",
+        "model": {
+          "id": "text",
+          "type": "SharedSlice",
+          "name": "Text",
+          "description": "Text",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "Text",
+              "primary": {
+                "text": {
+                  "type": "StructuredText",
+                  "config": {
+                    "label": "Text",
+                    "placeholder": "",
+                    "allowTargetBlank": true,
+                    "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                  }
+                }
+              },
+              "items": {},
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "version": "sktwi1xtmkfgx8626",
+            "items": [
+              {}
+            ],
+            "primary": {
+              "text": [
+                {
+                  "type": "paragraph",
+                  "text": "Eiusmod sunt officia minim excepteur aliquip sit ipsum. Officia cupidatat eu sint laboris non veniam consequat.",
+                  "spans": []
+                }
+              ]
+            },
+            "slice_type": "text"
+          }
+        },
+        "meta": {
+          "fileName": "index",
+          "extension": "js"
+        },
+        "screenshotPaths": {}
+      }
+    }
   }
 }

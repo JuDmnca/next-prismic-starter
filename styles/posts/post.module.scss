@@ -1,0 +1,23 @@
+.container {
+  padding: 0 var(--l-gap);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--l-gap);
+  padding: var(--l-gap) 0;
+}
+
+.card {
+  position: relative;
+  width: calc((100vw - 4 * var(--l-gap)) / 3);
+  height: 300px;
+  img {
+    background: var(--c-white);
+  }
+}
+
+.image {
+  width: 100%;
+}

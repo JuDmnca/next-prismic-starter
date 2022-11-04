@@ -5,7 +5,14 @@ export default function Header() {
   return (
     <header className={styles.header}>
       <Link href="/">Next Prismic Starter</Link>
-      <Link href="/posts">Posts</Link>
+      <div>
+        <Link href="/games">
+          <a className={styles.header__link}>Games</a>
+        </Link>
+        <Link href="/posts">
+          <a className={styles.header__link}>Posts</a>
+        </Link>
+      </div>
     </header>
   );
 }
